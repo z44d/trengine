@@ -1,4 +1,4 @@
-from . import ajax, google, hozory, tdict
+from . import ajax, google, hozory, tdict, ocr
 
 __all__ = ["AsyncEngine", "Engine"]
 
@@ -23,6 +23,10 @@ class Engine:
     def tdict(self) -> "tdict.TdictTranslator":
         return tdict.TdictTranslator()
 
+    @property
+    def ocr(self) -> "ocr.OCR":
+        return ocr.OCR()
+
 
 class AsyncEngine:
     def __init__(self) -> None:
@@ -43,3 +47,7 @@ class AsyncEngine:
     @property
     def tdict(self) -> "tdict.AsyncTdictTranslator":
         return tdict.AsyncTdictTranslator()
+
+    @property
+    def ocr(self) -> "ocr.AsyncOCR":
+        return ocr.AsyncOCR()

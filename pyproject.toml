@@ -1,6 +1,6 @@
 [project]
 name = "trengine"
-version = "1.1"
+version = "1.2"
 authors = [
   { name="ZAID", email="y8838@hotmail.com" },
 ]
@@ -16,6 +16,7 @@ dependencies = [
   "aiohttp",
   "asyncio",
   "requests",
+  "aiofiles"
 ]
 
 [project.urls]
