@@ -1,6 +1,7 @@
 import requests
 import aiohttp
 import json
+import os
 
 
 from .exceptions import ApiException
@@ -50,12 +51,9 @@ class AsyncOCR:
     def __init__(self) -> None:
         pass
 
-    async def from_image(self, path: Union[str, bytes], language: str = "eng") -> str:
-        if isinstance(path, bytes):
-            b = path
-        else:
-            with open(path, "rb") as f:
-                b = f.read()
+    async def from_image(self, path: str, language: str = "eng") -> str:
+        with open(path, "rb") as f:
+            b = f.read()
         async with aiohttp.ClientSession(
             headers={"Apikey": "donotstealthiskey_ip1"}
         ) as session:
@@ -71,7 +69,7 @@ class AsyncOCR:
             data = aiohttp.formdata.FormData(quote_fields=False)
             for k, v in payload.items():
                 data.add_field(k, str(v))
-            data.add_field("file", b, filename="photo.png")
+            data.add_field("file", b, filename=os.path.basename(path))
             async with session.post(
                 "https://api8.ocr.space/parse/image", data=data
             ) as response:
