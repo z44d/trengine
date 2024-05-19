@@ -1,7 +1,6 @@
 import requests
 import aiohttp
 import json
-import os
 
 
 from .exceptions import ApiException
@@ -72,7 +71,7 @@ class AsyncOCR:
             data = aiohttp.formdata.FormData(quote_fields=False)
             for k, v in payload.items():
                 data.add_field(k, str(v))
-            data.add_field("file", b, filename=os.path.basename(path))
+            data.add_field("file", b, filename="photo.png")
             async with session.post(
                 "https://api8.ocr.space/parse/image", data=data
             ) as response:
