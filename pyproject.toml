@@ -1,6 +1,6 @@
 [project]
 name = "trengine"
-version = "1.5"
+version = "1.6"
 authors = [
   { name="ZAID", email="y8838@hotmail.com" },
 ]
@@ -21,3 +21,9 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/zaid5o5/trengine"
 Issues = "https://github.com/zaid5o5/trengine/issues"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+exclude = ["examples"]
