@@ -7,17 +7,24 @@ import requests
 
 
 class AjaxTranslator:
-    def __init__(self) -> None:
-        pass
+    @staticmethod
+    def translate(
+        text: str, translated_lang: str = "en", source_lang: str = None
+    ) -> "AjaxTranslateResult":
+        """Translate a text using ajax engine.
 
-    def translate(self, text: str, dest: str = "en") -> "AjaxTranslateResult":
-        org = self.detect(text)
+        Args:
+            text (str): the text to translate.
+            translated_lang (str, optional): The lang code of target lang. Defaults to "en".
+            source_lang (str, optional): Source lang of the text. Defaults to None.
+        """
+        source_lang = source_lang or AjaxTranslator.detect(text)
         response = requests.post(
             "https://www.translate.com/translator/ajax_translate",
             data={
                 "text_to_translate": text,
-                "translated_lang": dest,
-                "source_lang": org,
+                "translated_lang": translated_lang,
+                "source_lang": source_lang,
                 "use_cache_only": "false",
             },
         )
@@ -29,9 +36,15 @@ class AjaxTranslator:
         if not result["result"] == "success":
             raise ApiException(result["message"])
 
-        return AjaxTranslateResult.parse(result, org)
+        return AjaxTranslateResult.parse(result, source_lang)
 
-    def detect(self, text: str) -> str:
+    @staticmethod
+    def detect(text: str) -> str:
+        """Detect language code from text.
+
+        Args:
+            text (str): The text.
+        """
         response = requests.post(
             "https://www.translate.com/translator/ajax_lang_auto_detect",
             data={"text_to_translate": text},
@@ -45,26 +58,27 @@ class AjaxTranslator:
 
         return result["language"]
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, *args):
-        return self
-
 
 class AsyncAjaxTranslator:
-    def __init__(self) -> None:
-        pass
+    @staticmethod
+    async def translate(
+        text: str, translated_lang: str = "en", source_lang: str = None
+    ) -> "AjaxTranslateResult":
+        """Translate a text using ajax engine.
 
-    async def translate(self, text: str, dest: str = "en") -> "AjaxTranslateResult":
-        org = await self.detect(text)
+        Args:
+            text (str): the text to translate.
+            translated_lang (str, optional): The lang code of target lang. Defaults to "en".
+            source_lang (str, optional): Source lang of the text. Defaults to None.
+        """
+        source_lang = source_lang or await AsyncAjaxTranslator.detect(text)
         async with ClientSession() as session:
             async with session.post(
                 "https://www.translate.com/translator/ajax_translate",
                 data={
                     "text_to_translate": text,
-                    "translated_lang": dest,
-                    "source_lang": org,
+                    "translated_lang": translated_lang,
+                    "source_lang": source_lang,
                     "use_cache_only": "false",
                 },
             ) as response:
@@ -75,9 +89,15 @@ class AsyncAjaxTranslator:
                 if not result["result"] == "success":
                     raise ApiException(result["message"])
 
-            return AjaxTranslateResult.parse(result, org)
+            return AjaxTranslateResult.parse(result, source_lang)
 
-    async def detect(self, text: str) -> str:
+    @staticmethod
+    async def detect(text: str) -> str:
+        """Detect language code from text.
+
+        Args:
+            text (str): The text.
+        """
         async with ClientSession() as session:
             async with session.post(
                 "https://www.translate.com/translator/ajax_lang_auto_detect",
@@ -91,9 +111,3 @@ class AsyncAjaxTranslator:
                     raise ApiException(result["message"])
 
                 return result["language"]
-
-    async def __aenter__(self):
-        return self
-
-    async def __aexit__(self, *args):
-        return self

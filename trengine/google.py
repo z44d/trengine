@@ -6,45 +6,47 @@ import requests
 
 
 class GoogleTranslator:
-    def __init__(self) -> None:
-        pass
+    @staticmethod
+    def translate(
+        text: str, to_language: str = "en", source_language: str = "auto"
+    ) -> "GoogleTranslateResult":
+        """Translate a text using google engine.
 
-    def translate(self, text: str, dest: str = "en") -> "GoogleTranslateResult":
+        Args:
+            text (str): the text to translate.
+            to_language (str, optional): The lang code of target lang. Defaults to "en".
+            source_language (str, optional): Source lang of the text. Defaults to "auto".
+        """
         response = requests.get(
-            f"https://clients5.google.com/translate_a/t?client=at&sl=auto&tl={dest}&q={text}"
+            f"https://clients5.google.com/translate_a/t?client=at&sl={source_language}&tl={to_language}&q={text}"
         )
         try:
             result = response.json()
         except Exception as e:
             raise BaseException(str(e))
 
-        return GoogleTranslateResult.parse(result[0], dest)
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, *args):
-        return self
+        return GoogleTranslateResult.parse(result[0], to_language)
 
 
 class AsyncGoogleTranslator:
-    def __init__(self) -> None:
-        pass
+    @staticmethod
+    async def translate(
+        text: str, to_language: str = "en", source_language: str = "auto"
+    ) -> "GoogleTranslateResult":
+        """Translate a text using google engine.
 
-    async def translate(self, text: str, dest: str = "en") -> "GoogleTranslateResult":
+        Args:
+            text (str): the text to translate.
+            to_language (str, optional): The lang code of target lang. Defaults to "en".
+            source_language (str, optional): Source lang of the text. Defaults to "auto".
+        """
         async with ClientSession() as session:
             async with session.get(
-                f"https://clients5.google.com/translate_a/t?client=at&sl=auto&tl={dest}&q={text}"
+                f"https://clients5.google.com/translate_a/t?client=at&sl={source_language}&tl={to_language}&q={text}"
             ) as response:
                 try:
                     result = await response.json()
                 except Exception as e:
                     raise BaseException(str(e))
 
-                return GoogleTranslateResult.parse(result[0], dest)
-
-    async def __aenter__(self):
-        return self
-
-    async def __aexit__(self, *args):
-        return self
+                return GoogleTranslateResult.parse(result[0], to_language)
