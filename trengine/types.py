@@ -9,7 +9,6 @@ class Base:
             **{
                 attr: (getattr(obj, attr))
                 for attr in filter(lambda x: not x.startswith("_"), obj.__dict__)
-                if getattr(obj, attr) is not None
             },
         }
 

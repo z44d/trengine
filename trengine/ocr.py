@@ -8,19 +8,15 @@ from .exceptions import ApiException
 
 
 class OCR:
-    def __init__(self) -> None:
-        pass
-
+    @staticmethod
     def from_image(self, path: str, language: str = "eng") -> str:
         loop = asyncio.get_event_loop()
-        return loop.run_until_complete(AsyncOCR().from_image(path, language))
+        return loop.run_until_complete(AsyncOCR.from_image(path, language))
 
 
 class AsyncOCR:
-    def __init__(self) -> None:
-        pass
-
-    async def from_image(self, path: str, language: str = "eng") -> str:
+    @staticmethod
+    async def from_image(path: str, language: str = "eng") -> str:
         with open(path, "rb") as f:
             b = f.read()
         async with aiohttp.ClientSession(

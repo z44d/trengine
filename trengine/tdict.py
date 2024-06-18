@@ -4,35 +4,31 @@ import requests
 
 
 class TdictTranslator:
-    def __init__(self) -> None:
-        pass
+    @staticmethod
+    def translate(text: str, to_language: str = "en") -> str:
+        """Translate a text using tdict engine.
 
-    def translate(self, text: str, dest: str = "en") -> str:
+        Args:
+            text (str): the text to translate.
+            to_language (str, optional): The lang code of target lang. Defaults to "en".
+        """
         response = requests.get(
-            f"https://t3.translatedict.com/1.php?p1=auto&p2={dest}&p3={text}"
+            f"https://t3.translatedict.com/1.php?p1=auto&p2={to_language}&p3={text}"
         )
         return response.text
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, *args):
-        return self
-
 
 class AsyncTdictTranslator:
-    def __init__(self) -> None:
-        pass
+    @staticmethod
+    async def translate(text: str, to_language: str = "en") -> str:
+        """Translate a text using tdict engine.
 
-    async def translate(self, text: str, dest: str = "en") -> str:
+        Args:
+            text (str): the text to translate.
+            to_language (str, optional): The lang code of target lang. Defaults to "en".
+        """
         async with ClientSession() as session:
             async with session.get(
-                f"https://t3.translatedict.com/1.php?p1=auto&p2={dest}&p3={text}"
+                f"https://t3.translatedict.com/1.php?p1=auto&p2={to_language}&p3={text}"
             ) as response:
                 return await response.text("utf-8")
-
-    async def __aenter__(self):
-        return self
-
-    async def __aexit__(self, *args):
-        return self
