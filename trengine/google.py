@@ -2,7 +2,7 @@ from aiohttp import ClientSession
 
 from .types import GoogleTranslateResult
 
-import requests
+import requests, trengine
 
 
 class GoogleTranslator:
@@ -18,7 +18,8 @@ class GoogleTranslator:
             source_language (str, optional): Source lang of the text. Defaults to "auto".
         """
         response = requests.get(
-            f"https://clients5.google.com/translate_a/t?client=at&sl={source_language}&tl={to_language}&q={text}"
+            f"https://clients5.google.com/translate_a/t?client=at&sl={source_language}&tl={to_language}&q={text}",
+            headers=trengine.HEADERS,
         )
         try:
             result = response.json()
@@ -40,7 +41,7 @@ class AsyncGoogleTranslator:
             to_language (str, optional): The lang code of target lang. Defaults to "en".
             source_language (str, optional): Source lang of the text. Defaults to "auto".
         """
-        async with ClientSession() as session:
+        async with ClientSession(headers=trengine.HEADERS) as session:
             async with session.get(
                 f"https://clients5.google.com/translate_a/t?client=at&sl={source_language}&tl={to_language}&q={text}"
             ) as response:

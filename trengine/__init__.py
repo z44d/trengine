@@ -2,6 +2,10 @@ from . import ajax, google, hozory, tdict, ocr
 
 __all__ = ["AsyncEngine", "Engine"]
 
+HEADERS = {
+    "User-Agent": "GoogleTranslate/6.6.1.RC09.302039986 (Linux; U; Android 9; Redmi Note 8)"
+}
+
 
 class Engine:
     @property

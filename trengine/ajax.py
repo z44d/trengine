@@ -3,7 +3,7 @@ from aiohttp import ClientSession
 from .types import AjaxTranslateResult
 from .exceptions import ApiException
 
-import requests
+import requests, trengine
 
 
 class AjaxTranslator:
@@ -27,6 +27,7 @@ class AjaxTranslator:
                 "source_lang": source_lang,
                 "use_cache_only": "false",
             },
+            headers=trengine.HEADERS,
         )
         try:
             result = response.json()
@@ -48,6 +49,7 @@ class AjaxTranslator:
         response = requests.post(
             "https://www.translate.com/translator/ajax_lang_auto_detect",
             data={"text_to_translate": text},
+            headers=trengine.HEADERS,
         )
         try:
             result = response.json()
@@ -72,7 +74,7 @@ class AsyncAjaxTranslator:
             source_lang (str, optional): Source lang of the text. Defaults to None.
         """
         source_lang = source_lang or await AsyncAjaxTranslator.detect(text)
-        async with ClientSession() as session:
+        async with ClientSession(headers=trengine.HEADERS) as session:
             async with session.post(
                 "https://www.translate.com/translator/ajax_translate",
                 data={
@@ -84,6 +86,7 @@ class AsyncAjaxTranslator:
             ) as response:
                 try:
                     result = await response.json()
+                    print(result)
                 except Exception as e:
                     return BaseException(str(e))
                 if not result["result"] == "success":
@@ -102,6 +105,7 @@ class AsyncAjaxTranslator:
             async with session.post(
                 "https://www.translate.com/translator/ajax_lang_auto_detect",
                 data={"text_to_translate": text},
+                headers=trengine.HEADERS,
             ) as response:
                 try:
                     result = await response.json()

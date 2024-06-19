@@ -43,7 +43,9 @@ class AjaxTranslateResult(Base):
         return AjaxTranslateResult(
             original_text=d["original_text"],
             translated_text=d["translated_text"],
-            translation_language=d["human_translation_details"]["translation_language"],
+            translation_language=d["human_translation_details"]["translation_language"]
+            if d["human_translation_details"]
+            else None,
             original_language=org,
         )
 

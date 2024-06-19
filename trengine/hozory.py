@@ -5,7 +5,7 @@ from .exceptions import ApiException
 
 from json import dumps
 
-import requests
+import requests, trengine
 
 
 class HozoryTranslator:
@@ -18,7 +18,8 @@ class HozoryTranslator:
             target (str, optional): The lang code of target lang. Defaults to "en".
         """
         response = requests.get(
-            f"https://hozory.com/translate/?target={target}&text={text}"
+            f"https://hozory.com/translate/?target={target}&text={text}",
+            headers=trengine.HEADERS,
         )
         try:
             result = response.json()
@@ -42,7 +43,8 @@ class AsyncHozoryTranslator:
         """
         async with ClientSession() as session:
             async with session.get(
-                f"https://hozory.com/translate/?target={target}&text={text}"
+                f"https://hozory.com/translate/?target={target}&text={text}",
+                headers=trengine.HEADERS,
             ) as response:
                 try:
                     result = await response.json()
