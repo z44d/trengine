@@ -49,4 +49,8 @@ class AsyncGoogleTranslator:
                 except Exception as e:
                     raise BaseException(str(e))
 
-                return GoogleTranslateResult.parse(result[0], to_language)
+                return GoogleTranslateResult.parse(
+                    result[0],
+                    to_language,
+                    source_language if source_language != "auto" else None,
+                )
