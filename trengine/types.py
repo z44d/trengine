@@ -23,10 +23,10 @@ class GoogleTranslateResult(Base):
     dest_language: str
 
     @staticmethod
-    def parse(d: list, dest: str) -> "GoogleTranslateResult":
+    def parse(d: list, dest: str, source: str = None) -> "GoogleTranslateResult":
         return GoogleTranslateResult(
-            translated_text=" ".join([i for i in d[:-1]]),
-            original_language=d[-1],
+            translated_text=" ".join([i for i in d[:-1]]) if isinstance(d, list) else d,
+            original_language=d[-1] if source is None else source,
             dest_language=dest,
         )
 
