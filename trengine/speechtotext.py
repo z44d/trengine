@@ -41,7 +41,7 @@ class SpeechToText:
 
 class AsyncSpeechToText:
     @staticmethod
-    async def speechtotext(file_path: str, language: str = "en") -> "SpeechToTextResult":
+    async def toText(file_path: str, language: str = "en") -> "SpeechToTextResult":
         """Speech to text using google cloud.
 
         Args:
@@ -49,17 +49,14 @@ class AsyncSpeechToText:
             language (str, optional): he language code for the speech in the audio file. Defaults to "en".
         """
         async with ClientSession() as session:
-            files = {
-            'file': open(file_path, 'rb'),
-            }
-            data = {
-            'language': language,
-            }
-            async with session.get(
-                f"https://api.devrio.org/api/v1/SpeechToText/",
-                files=files,
-                data=data
-            ) as response:
+            form = aiohttp.FormData()
+            form.add_field('file', open(file_path, 'rb'), filename=file_path)
+            form.add_field('language', language)
+
+            async with session.post(
+                "https://api.devrio.org/api/v1/SpeechToText/",
+                data=form
+                ) as response:
                 try:
                     result = await response.json()
                 except Exception as e:
