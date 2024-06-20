@@ -1,4 +1,4 @@
-from . import ajax, google, hozory, tdict, ocr
+from . import ajax, google, hozory, stt, tdict, ocr
 
 __all__ = ["AsyncEngine", "Engine"]
 
@@ -52,6 +52,15 @@ class Engine:
             ocr.OCR: Ocr Class.
         """
         return ocr.OCR
+    
+    @property
+    def stt(self) -> "stt.SpeechToText":
+        """Use SpeechToText engine.
+
+        Returns:
+            stt.SpeechToText: stt Engine Class.
+        """
+        return stt.SpeechToText
 
 
 class AsyncEngine:
@@ -99,3 +108,12 @@ class AsyncEngine:
             ocr.AsyncOCR: Ocr Class.
         """
         return ocr.AsyncOCR
+
+    @property
+    def stt(self) -> "stt.AsyncSpeechToText":
+        """Use SpeechToText engine.
+
+        Returns:
+            stt.AsyncSpeechToText: stt Engine Class.
+        """
+        return stt.AsyncSpeechToText

@@ -63,3 +63,19 @@ class HozoryTranslateResult(Base):
             translation_language=dest,
             voice_link=d["Voice_link"],
         )
+
+@dataclass
+class SpeechToTextResult(Base):
+    status: bool
+    file_path: str
+    speech_text: str
+    language: str
+
+    @staticmethod
+    def parse(d: dict, p: str) -> "SpeechToTextResult":
+        return SpeechToTextResult(
+            status=d["ok"],
+            file_path=p,
+            speech_text=d["result"],
+            language=d["language"],
+        )
