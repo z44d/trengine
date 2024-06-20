@@ -33,7 +33,7 @@ class SpeechToText:
             raise BaseException(str(e))
 
         if not result["ok"]:
-            raise ApiException(dumps(result["erorr"], indent=2, ensure_ascii=False))
+            raise ApiException(dumps(result["error"], indent=2, ensure_ascii=False))
 
         return SpeechToTextResult.parse(result, file_path)
 
@@ -63,7 +63,7 @@ class AsyncSpeechToText:
 
                 if not result["ok"]:
                     raise ApiException(
-                        dumps(result["erorr"], indent=2, ensure_ascii=False)
+                        dumps(result["error"], indent=2, ensure_ascii=False)
                     )
 
                 return SpeechToTextResult.parse(result, file_path)
