@@ -64,6 +64,7 @@ class HozoryTranslateResult(Base):
             voice_link=d["Voice_link"],
         )
 
+
 @dataclass
 class SpeechToTextResult(Base):
     status: bool
