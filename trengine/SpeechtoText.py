@@ -7,7 +7,7 @@ from .exceptions import ApiException
 
 class SpeechToText:
     @staticmethod
-    def speechtotext(file_path: str, language: str = "en") -> SpeechToTextResult:
+    def speech_to_text(file_path: str, language: str = "en") -> SpeechToTextResult:
        """Speech to text using google cloud.
 
         Args:
