@@ -9,7 +9,7 @@ from .exceptions import ApiException
 
 class OCR:
     @staticmethod
-    def from_image(self, path: str, language: str = "eng") -> str:
+    def from_image(path: str, language: str = "eng") -> str:
         loop = asyncio.get_event_loop()
         return loop.run_until_complete(AsyncOCR.from_image(path, language))
 
