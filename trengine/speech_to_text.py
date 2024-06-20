@@ -14,8 +14,8 @@ class SpeechToText:
         """Speech to text using google cloud.
 
         Args:
-            file_path (str): The path to the audio file to be translated into text. This should be a valid path to an audio file
-            language (str, optional): he language code for the speech in the audio file. Defaults to "en".
+            file_path (str): The path to the audio file to be trancribed into text. This should be a valid path to an audio file
+            language (str, optional): the source language code of the audio file. Defaults to "en".
         """
         files = {
             "file": open(file_path, "rb"),
@@ -43,8 +43,8 @@ class AsyncSpeechToText:
         """Speech to text using google cloud.
 
         Args:
-            file_path (str): The path to the audio file to be translated into text. This should be a valid path to an audio file
-            language (str, optional): he language code for the speech in the audio file. Defaults to "en".
+            file_path (str): The path to the audio file to be trancribed into text. This should be a valid path to an audio file
+            language (str, optional): the source language code of the audio file. Defaults to "en".
         """
         async with ClientSession() as session:
             form = FormData()
