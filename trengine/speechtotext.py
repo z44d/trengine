@@ -8,9 +8,9 @@ from json import dumps
 import requests
 
 
-class SpeechToText:
+class SpeechToTextService:
     @staticmethod
-    def speechtotext(file_path: str, language: str = "en") -> "SpeechToTextResult":
+    def toText(file_path: str, language: str = "en") -> "SpeechToTextResult":
         """Speech to text using google cloud.
 
         Args:
@@ -39,9 +39,9 @@ class SpeechToText:
         return SpeechToTextResult.parse(result, file_path)
 
 
-class AsyncSpeechToText:
+class AsyncSpeechToTextService:
     @staticmethod
-    async def speechtotext(file_path: str, language: str = "en") -> "SpeechToTextResult":
+    async def toText(file_path: str, language: str = "en") -> "SpeechToTextResult":
         """Speech to text using google cloud.
 
         Args:
