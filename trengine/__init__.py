@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-from . import ajax, google, hozory, speechtotext, tdict, ocr
-=======
-from . import ajax, google, hozory, SpeechtoText, tdict, ocr
->>>>>>> 73e5984a89d06211a302484d036a0281de79bd63
+from . import ajax, google, hozory, speech_to_text, tdict, ocr
 
 __all__ = ["AsyncEngine", "Engine"]
 
@@ -56,25 +52,15 @@ class Engine:
             ocr.OCR: Ocr Class.
         """
         return ocr.OCR
-    
+
     @property
-<<<<<<< HEAD
-    def SpeechtoText(self) -> "speechtotext.SpeechToTextService":
-        """Use SpeechToText engine.
+    def speech_to_text(self) -> "speech_to_text.SpeechToText":
+        """Use speech_to_text service.
 
         Returns:
-            speechtotext.SpeechToTextService: SpeechtoText Engine Class.
+            speech_to_text.SpeechToText: speech_to_text Engine Class.
         """
-        return speechtotext.SpeechToTextService
-=======
-    def SpeechtoText(self) -> "stt.SpeechToText":
-        """Use SpeechToText engine.
-
-        Returns:
-            stt.SpeechToText: stt Engine Class.
-        """
-        return stt.SpeechToText
->>>>>>> 73e5984a89d06211a302484d036a0281de79bd63
+        return speech_to_text.SpeechToText
 
 
 class AsyncEngine:
@@ -124,20 +110,10 @@ class AsyncEngine:
         return ocr.AsyncOCR
 
     @property
-<<<<<<< HEAD
-    def SpeechtoText(self) -> "speechtotext.AsyncSpeechToTextService":
-        """Use speechtotext engine.
+    def speech_to_text(self) -> "speech_to_text.AsyncSpeechToText":
+        """Use speech_to_text service.
 
         Returns:
-            speechtotext.AsyncSpeechToTextService: SpeechtoText Engine Class.
+            speech_to_text.AsyncSpeechToText: speech_to_text Engine Class.
         """
-        return speechtotext.AsyncSpeechToTextService
-=======
-    def SpeechtoText(self) -> "stt.AsyncSpeechToText":
-        """Use SpeechToText engine.
-
-        Returns:
-            stt.AsyncSpeechToText: stt Engine Class.
-        """
-        return stt.AsyncSpeechToText
->>>>>>> 73e5984a89d06211a302484d036a0281de79bd63
+        return speech_to_text.AsyncSpeechToText
