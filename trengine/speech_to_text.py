@@ -15,7 +15,7 @@ class SpeechToText:
         """Speech to text using google cloud.
 
         Args:
-            file_path (str): The path to the audio file to be trancribed into text. This should be a valid path to an audio file
+            file_path (str): The path to the audio file to be transcribed into text. This should be a valid path to an audio file
             language (str, optional): the source language code of the audio file. Defaults to "en".
         """
         with open(file_path, "rb") as f:
@@ -33,7 +33,7 @@ class SpeechToText:
             raise BaseException(str(e))
 
         if not result["ok"]:
-            raise ApiException(dumps(result["erorr"], indent=2, ensure_ascii=False))
+            raise ApiException(dumps(result["error"], indent=2, ensure_ascii=False))
 
         return SpeechToTextResult.parse(result, file_path)
 
@@ -44,7 +44,7 @@ class AsyncSpeechToText:
         """Speech to text using google cloud.
 
         Args:
-            file_path (str): The path to the audio file to be trancribed into text. This should be a valid path to an audio file
+            file_path (str): The path to the audio file to be transcribed into text. This should be a valid path to an audio file
             language (str, optional): the source language code of the audio file. Defaults to "en".
         """
         with open(file_path, "rb") as f:
@@ -63,7 +63,7 @@ class AsyncSpeechToText:
 
                 if not result["ok"]:
                     raise ApiException(
-                        dumps(result["erorr"], indent=2, ensure_ascii=False)
+                        dumps(result["error"], indent=2, ensure_ascii=False)
                     )
 
                 return SpeechToTextResult.parse(result, file_path)

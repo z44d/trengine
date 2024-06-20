@@ -52,3 +52,6 @@ async def main():
 
 asyncio.run(main())
 ```
+
+# Thanks for:
+    - [@dev-rio](https://github.com/dev-rio) for Speech Recognition API.
