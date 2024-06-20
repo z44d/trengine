@@ -1,6 +1,6 @@
 [project]
 name = "trengine"
-version = "2.2"
+version = "2.3"
 authors = [
   { name="ZAID", email="y8838@hotmail.com" },
 ]
