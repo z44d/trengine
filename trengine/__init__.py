@@ -1,4 +1,8 @@
-from . import ajax, google, hozory, tdict, ocr
+<<<<<<< HEAD
+from . import ajax, google, hozory, speechtotext, tdict, ocr
+=======
+from . import ajax, google, hozory, SpeechtoText, tdict, ocr
+>>>>>>> 73e5984a89d06211a302484d036a0281de79bd63
 
 __all__ = ["AsyncEngine", "Engine"]
 
@@ -52,6 +56,25 @@ class Engine:
             ocr.OCR: Ocr Class.
         """
         return ocr.OCR
+    
+    @property
+<<<<<<< HEAD
+    def SpeechtoText(self) -> "speechtotext.SpeechToTextService":
+        """Use SpeechToText engine.
+
+        Returns:
+            speechtotext.SpeechToTextService: SpeechtoText Engine Class.
+        """
+        return speechtotext.SpeechToTextService
+=======
+    def SpeechtoText(self) -> "stt.SpeechToText":
+        """Use SpeechToText engine.
+
+        Returns:
+            stt.SpeechToText: stt Engine Class.
+        """
+        return stt.SpeechToText
+>>>>>>> 73e5984a89d06211a302484d036a0281de79bd63
 
 
 class AsyncEngine:
@@ -99,3 +122,22 @@ class AsyncEngine:
             ocr.AsyncOCR: Ocr Class.
         """
         return ocr.AsyncOCR
+
+    @property
+<<<<<<< HEAD
+    def SpeechtoText(self) -> "speechtotext.AsyncSpeechToTextService":
+        """Use speechtotext engine.
+
+        Returns:
+            speechtotext.AsyncSpeechToTextService: SpeechtoText Engine Class.
+        """
+        return speechtotext.AsyncSpeechToTextService
+=======
+    def SpeechtoText(self) -> "stt.AsyncSpeechToText":
+        """Use SpeechToText engine.
+
+        Returns:
+            stt.AsyncSpeechToText: stt Engine Class.
+        """
+        return stt.AsyncSpeechToText
+>>>>>>> 73e5984a89d06211a302484d036a0281de79bd63
