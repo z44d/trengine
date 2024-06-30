@@ -1,4 +1,4 @@
-from . import ajax, google, hozory, speech_to_text, tdict, ocr
+from . import ajax, google, hozory, speech_to_text, tdict, ocr, text_to_speech
 
 __all__ = ["AsyncEngine", "Engine"]
 
@@ -62,6 +62,14 @@ class Engine:
         """
         return speech_to_text.SpeechToText
 
+    @property
+    def text_to_speech(self) -> "text_to_speech.TextToSpeech":
+        """Use text_to_speech service.
+
+        Returns:
+            text_to_speech.TextToSpeech: text_to_speech Engine Class.
+        """
+        return text_to_speech.TextToSpeech
 
 class AsyncEngine:
     @property
@@ -117,3 +125,12 @@ class AsyncEngine:
             speech_to_text.AsyncSpeechToText: speech_to_text Engine Class.
         """
         return speech_to_text.AsyncSpeechToText
+
+    @property
+    def text_to_speech(self) -> "text_to_speech.AsyncTextToSpeech":
+        """Use text_to_speech service.
+
+        Returns:
+            text_to_speech.AsyncTextToSpeech: text_to_speech Engine Class.
+        """
+        return text_to_speech.AsyncTextToSpeech
