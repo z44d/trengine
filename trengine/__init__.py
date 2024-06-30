@@ -1,4 +1,4 @@
-from . import ajax, google, hozory, speech_to_text, tdict, ocr, text_to_speech
+from . import ajax, google, hozory, speech_to_text, tdict, ocr, text_to_speech, identify_music
 
 __all__ = ["AsyncEngine", "Engine"]
 
@@ -71,6 +71,15 @@ class Engine:
         """
         return text_to_speech.TextToSpeech
 
+    @property
+    def identify_music(self) -> "identify_music.IdentifyMusic":
+        """Use identify_music service.
+
+        Returns:
+            identify_music.IdentifyMusic: identify_music Engine Class.
+        """
+        return identify_music.IdentifyMusic
+
 class AsyncEngine:
     @property
     def ajax(self) -> "ajax.AsyncAjaxTranslator":
@@ -134,3 +143,12 @@ class AsyncEngine:
             text_to_speech.AsyncTextToSpeech: text_to_speech Engine Class.
         """
         return text_to_speech.AsyncTextToSpeech
+
+    @property
+    def identify_music(self) -> "identify_music.AsyncIdentifyMusic":
+        """Use identify_music service.
+
+        Returns:
+            identify_music.AsyncIdentifyMusic: identify_music Engine Class.
+        """
+        return identify_music.AsyncIdentifyMusic
