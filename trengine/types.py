@@ -80,3 +80,35 @@ class SpeechToTextResult(Base):
             speech_text=d["result"],
             language=d["language"],
         )
+
+
+@dataclass
+class IdentifyMusicResult(Base):
+    status: bool
+    file_path: str
+    tracks: list
+
+    @staticmethod
+    def parse(d: dict, p: str) -> "IdentifyMusicResult":
+        return IdentifyMusicResult(
+            status=d["ok"],
+            file_path=p,
+            tracks=d["data"],
+        )
+
+
+@dataclass
+class TextToSpeechResult(Base):
+    status: bool
+    text: str
+    language: str
+    output_path: str
+
+    @staticmethod
+    def parse(d: dict, p: str) -> "TextToSpeechResult":
+        return TextToSpeechResult(
+            status=d["ok"],
+            text=d["text"],
+            output_path=p,
+            language=d["language"],
+        )

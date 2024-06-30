@@ -16,12 +16,12 @@ class SpeechToText:
 
         Args:
             file_path (str): The path to the audio file to be transcribed into text. This should be a valid path to an audio file
-            language (str, optional): the source language code of the audio file. Defaults to "en".
+            language (str, optional): the source language code of the audio file. Defaults to "en". Supported languages are: en, ar
         """
         with open(file_path, "rb") as f:
             b = f.read()
         response = requests.post(
-            f"https://api.devrio.org/api/v1/SpeechToText/",
+            "https://api.devrio.org/api/v1/SpeechToText/",
             data={
                 "language": language,
             },
@@ -45,7 +45,7 @@ class AsyncSpeechToText:
 
         Args:
             file_path (str): The path to the audio file to be transcribed into text. This should be a valid path to an audio file
-            language (str, optional): the source language code of the audio file. Defaults to "en".
+            language (str, optional): the source language code of the audio file. Defaults to "en". Supported languages are: en, ar
         """
         with open(file_path, "rb") as f:
             b = f.read()
@@ -54,7 +54,7 @@ class AsyncSpeechToText:
             form.add_field("file", b, filename=os.path.basename(file_path))
             form.add_field("language", language)
             async with session.request(
-                "post", f"https://api.devrio.org/api/v1/SpeechToText/", data=form
+                "post", "https://api.devrio.org/api/v1/SpeechToText/", data=form
             ) as response:
                 try:
                     result = await response.json()
