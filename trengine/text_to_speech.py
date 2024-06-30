@@ -8,10 +8,11 @@ from .exceptions import ApiException
 from json import dumps
 
 
-
 class TextToSpeech:
     @staticmethod
-    def to_speech(text: str, output_path: str, language: str = "en") -> "TextToSpeechResult":
+    def to_speech(
+        text: str, output_path: str, language: str = "en"
+    ) -> "TextToSpeechResult":
         """Text to speech using google translate.
 
         Args:
@@ -31,18 +32,21 @@ class TextToSpeech:
 
             if not result["ok"]:
                 raise ApiException(dumps(result["error"], indent=2, ensure_ascii=False))
-        
+
             with open(output_path, "wb") as f:
                 f.write(base64.b64decode(result["result"]))
-                
+
         except Exception as e:
             raise BaseException(str(e))
 
         return TextToSpeechResult.parse(result, output_path)
-    
+
+
 class AsyncTextToSpeech:
     @staticmethod
-    async def to_speech(text: str, output_path: str, language: str = "en") -> "TextToSpeechResult":
+    async def to_speech(
+        text: str, output_path: str, language: str = "en"
+    ) -> "TextToSpeechResult":
         """Text to speech using google translate.
 
         Args:
@@ -62,11 +66,13 @@ class AsyncTextToSpeech:
                     result = await response.json()
 
                     if not result["ok"]:
-                        raise ApiException(dumps(result["error"], indent=2, ensure_ascii=False))
-                    
+                        raise ApiException(
+                            dumps(result["error"], indent=2, ensure_ascii=False)
+                        )
+
                     with open(output_path, "wb") as f:
                         f.write(base64.b64decode(result["result"]))
-                    
+
                 except Exception as e:
                     raise BaseException(str(e))
 

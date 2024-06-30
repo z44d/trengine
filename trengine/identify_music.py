@@ -32,7 +32,7 @@ class IdentifyMusic:
             raise ApiException(dumps(result["error"], indent=2, ensure_ascii=False))
 
         return IdentifyMusicResult.parse(result, file_path)
-    
+
 
 class AsyncIdentifyMusic:
     @staticmethod
@@ -55,6 +55,8 @@ class AsyncIdentifyMusic:
                 except Exception as e:
                     raise BaseException(str(e))
                 if not result["ok"]:
-                    raise ApiException(dumps(result["error"], indent=2, ensure_ascii=False))
+                    raise ApiException(
+                        dumps(result["error"], indent=2, ensure_ascii=False)
+                    )
 
                 return IdentifyMusicResult.parse(result, file_path)

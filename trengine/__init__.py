@@ -1,4 +1,13 @@
-from . import ajax, google, hozory, speech_to_text, tdict, ocr, text_to_speech, identify_music
+from . import (
+    ajax,
+    google,
+    hozory,
+    speech_to_text,
+    tdict,
+    ocr,
+    text_to_speech,
+    identify_music,
+)
 
 __all__ = ["AsyncEngine", "Engine"]
 
@@ -79,6 +88,7 @@ class Engine:
             identify_music.IdentifyMusic: identify_music Engine Class.
         """
         return identify_music.IdentifyMusic
+
 
 class AsyncEngine:
     @property
