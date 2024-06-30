@@ -21,7 +21,7 @@ class IdentifyMusic:
             b = f.read()
         response = requests.post(
             "https://api.devrio.org/api/v1/idetifymusic/",
-            files={"file": b},
+            files={"file": (os.path.basename(file_path), b)},
         )
         try:
             result = response.json()
