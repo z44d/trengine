@@ -16,7 +16,7 @@ class SpeechToText:
 
         Args:
             file_path (str): The path to the audio file to be transcribed into text. This should be a valid path to an audio file
-            language (str, optional): the source language code of the audio file. Defaults to "en".
+            language (str, optional): the source language code of the audio file. Defaults to "en". Supported languages are: en, ar
         """
         with open(file_path, "rb") as f:
             b = f.read()
@@ -45,7 +45,7 @@ class AsyncSpeechToText:
 
         Args:
             file_path (str): The path to the audio file to be transcribed into text. This should be a valid path to an audio file
-            language (str, optional): the source language code of the audio file. Defaults to "en".
+            language (str, optional): the source language code of the audio file. Defaults to "en". Supported languages are: en, ar
         """
         with open(file_path, "rb") as f:
             b = f.read()
