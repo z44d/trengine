@@ -21,7 +21,7 @@ class TextToSpeech:
         """
         response = requests.post(
             "https://api.devrio.org/api/v1/tts/",
-            data={
+            json={
                 "language": language,
                 "text": text,
             },
@@ -53,7 +53,7 @@ class AsyncTextToSpeech:
         async with ClientSession() as session:
             async with session.post(
                 "https://api.devrio.org/api/v1/tts/",
-                data={
+                json={
                     "language": language,
                     "text": text,
                 },
