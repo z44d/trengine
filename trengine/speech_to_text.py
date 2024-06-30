@@ -21,7 +21,7 @@ class SpeechToText:
         with open(file_path, "rb") as f:
             b = f.read()
         response = requests.post(
-            f"https://api.devrio.org/api/v1/SpeechToText/",
+            "https://api.devrio.org/api/v1/SpeechToText/",
             data={
                 "language": language,
             },
@@ -54,7 +54,7 @@ class AsyncSpeechToText:
             form.add_field("file", b, filename=os.path.basename(file_path))
             form.add_field("language", language)
             async with session.request(
-                "post", f"https://api.devrio.org/api/v1/SpeechToText/", data=form
+                "post", "https://api.devrio.org/api/v1/SpeechToText/", data=form
             ) as response:
                 try:
                     result = await response.json()
