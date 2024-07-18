@@ -6,10 +6,8 @@ class Base:
     @staticmethod
     def default(obj: "Base"):
         return {
-            **{
-                attr: (getattr(obj, attr))
-                for attr in filter(lambda x: not x.startswith("_"), obj.__dict__)
-            },
+            attr: (getattr(obj, attr))
+            for attr in filter(lambda x: not x.startswith("_"), obj.__dict__)
         }
 
     def __str__(self) -> str:
