@@ -18,8 +18,8 @@ HEADERS = {
 
 class Engine:
     @property
-    def tr(self) -> "tr.AjaxTranslator":
-        """Use ajax engine.
+    def tr(self) -> "tr.Translator":
+        """Use tr engine.
 
         Returns:
             ajax.AjaxTranslator: Ajax Engine Class.
@@ -92,8 +92,8 @@ class Engine:
 
 class AsyncEngine:
     @property
-    def tr(self) -> "tr.AsyncAjaxTranslator":
-        """Use ajax engine.
+    def tr(self) -> "tr.AsyncTranslator":
+        """Use tr engine.
 
         Returns:
             ajax.AsyncAjaxTranslator: Ajax Engine Class.
