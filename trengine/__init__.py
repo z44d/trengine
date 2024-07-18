@@ -1,5 +1,4 @@
 from . import (
-    ajax,
     google,
     hozory,
     speech_to_text,
@@ -7,6 +6,7 @@ from . import (
     ocr,
     text_to_speech,
     identify_music,
+    tr,
 )
 
 __all__ = ["AsyncEngine", "Engine"]
@@ -18,13 +18,13 @@ HEADERS = {
 
 class Engine:
     @property
-    def ajax(self) -> "ajax.AjaxTranslator":
+    def tr(self) -> "tr.AjaxTranslator":
         """Use ajax engine.
 
         Returns:
             ajax.AjaxTranslator: Ajax Engine Class.
         """
-        return ajax.AjaxTranslator
+        return tr.Translator
 
     @property
     def google(self) -> "google.GoogleTranslator":
@@ -92,13 +92,13 @@ class Engine:
 
 class AsyncEngine:
     @property
-    def ajax(self) -> "ajax.AsyncAjaxTranslator":
+    def tr(self) -> "tr.AsyncAjaxTranslator":
         """Use ajax engine.
 
         Returns:
             ajax.AsyncAjaxTranslator: Ajax Engine Class.
         """
-        return ajax.AsyncAjaxTranslator
+        return tr.AsyncTranslator
 
     @property
     def google(self) -> "google.AsyncGoogleTranslator":

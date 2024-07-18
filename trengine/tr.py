@@ -6,19 +6,19 @@ from .exceptions import ApiException
 import requests, trengine
 
 
-class AjaxTranslator:
+class Translator:
     @staticmethod
     def translate(
         text: str, translated_lang: str = "en", source_lang: str = None
     ) -> "AjaxTranslateResult":
-        """Translate a text using ajax engine.
+        """Translate a text using tr engine.
 
         Args:
             text (str): the text to translate.
             translated_lang (str, optional): The lang code of target lang. Defaults to "en".
             source_lang (str, optional): Source lang of the text. Defaults to None.
         """
-        source_lang = source_lang or AjaxTranslator.detect(text)
+        source_lang = source_lang or Translator.detect(text)
         response = requests.post(
             "https://www.translate.com/translator/ajax_translate",
             data={
@@ -61,19 +61,19 @@ class AjaxTranslator:
         return result["language"]
 
 
-class AsyncAjaxTranslator:
+class AsyncTranslator:
     @staticmethod
     async def translate(
         text: str, translated_lang: str = "en", source_lang: str = None
     ) -> "AjaxTranslateResult":
-        """Translate a text using ajax engine.
+        """Translate a text using tr engine.
 
         Args:
             text (str): the text to translate.
             translated_lang (str, optional): The lang code of target lang. Defaults to "en".
             source_lang (str, optional): Source lang of the text. Defaults to None.
         """
-        source_lang = source_lang or await AsyncAjaxTranslator.detect(text)
+        source_lang = source_lang or await AsyncTranslator.detect(text)
         async with ClientSession(headers=trengine.HEADERS) as session:
             async with session.post(
                 "https://www.translate.com/translator/ajax_translate",
