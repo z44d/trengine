@@ -1,0 +1,1267 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
+        <title>trengine package - trengine documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">trengine  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">trengine  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/trengine.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="trengine-package">
+<h1>trengine package<a class="headerlink" href="#trengine-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-trengine.exceptions">
+<span id="trengine-exceptions-module"></span><h2>trengine.exceptions module<a class="headerlink" href="#module-trengine.exceptions" title="Link to this heading">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="trengine.exceptions.ApiException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.exceptions.</span></span><span class="sig-name descname"><span class="pre">ApiException</span></span><a class="reference internal" href="_modules/trengine/exceptions.html#ApiException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.exceptions.ApiException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-trengine.google">
+<span id="trengine-google-module"></span><h2>trengine.google module<a class="headerlink" href="#module-trengine.google" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.google.AsyncGoogleTranslator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.google.</span></span><span class="sig-name descname"><span class="pre">AsyncGoogleTranslator</span></span><a class="reference internal" href="_modules/trengine/google.html#AsyncGoogleTranslator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.google.AsyncGoogleTranslator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.google.AsyncGoogleTranslator.translate">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.GoogleTranslateResult" title="trengine.types.GoogleTranslateResult"><span class="pre">GoogleTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/google.html#AsyncGoogleTranslator.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.google.AsyncGoogleTranslator.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Translate a text using google engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – the text to translate.</p></li>
+<li><p><strong>to_language</strong> (<em>str</em><em>, </em><em>optional</em>) – The lang code of target lang. Defaults to “en”.</p></li>
+<li><p><strong>source_language</strong> (<em>str</em><em>, </em><em>optional</em>) – Source lang of the text. Defaults to “auto”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.google.GoogleTranslator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.google.</span></span><span class="sig-name descname"><span class="pre">GoogleTranslator</span></span><a class="reference internal" href="_modules/trengine/google.html#GoogleTranslator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.google.GoogleTranslator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.google.GoogleTranslator.translate">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.GoogleTranslateResult" title="trengine.types.GoogleTranslateResult"><span class="pre">GoogleTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/google.html#GoogleTranslator.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.google.GoogleTranslator.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Translate a text using google engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – the text to translate.</p></li>
+<li><p><strong>to_language</strong> (<em>str</em><em>, </em><em>optional</em>) – The lang code of target lang. Defaults to “en”.</p></li>
+<li><p><strong>source_language</strong> (<em>str</em><em>, </em><em>optional</em>) – Source lang of the text. Defaults to “auto”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine.hozory">
+<span id="trengine-hozory-module"></span><h2>trengine.hozory module<a class="headerlink" href="#module-trengine.hozory" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.hozory.AsyncHozoryTranslator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.hozory.</span></span><span class="sig-name descname"><span class="pre">AsyncHozoryTranslator</span></span><a class="reference internal" href="_modules/trengine/hozory.html#AsyncHozoryTranslator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.hozory.AsyncHozoryTranslator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.hozory.AsyncHozoryTranslator.translate">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.HozoryTranslateResult" title="trengine.types.HozoryTranslateResult"><span class="pre">HozoryTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/hozory.html#AsyncHozoryTranslator.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.hozory.AsyncHozoryTranslator.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Translate a text using hozory engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – the text to translate.</p></li>
+<li><p><strong>target</strong> (<em>str</em><em>, </em><em>optional</em>) – The lang code of target lang. Defaults to “en”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.hozory.HozoryTranslator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.hozory.</span></span><span class="sig-name descname"><span class="pre">HozoryTranslator</span></span><a class="reference internal" href="_modules/trengine/hozory.html#HozoryTranslator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.hozory.HozoryTranslator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.hozory.HozoryTranslator.translate">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.HozoryTranslateResult" title="trengine.types.HozoryTranslateResult"><span class="pre">HozoryTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/hozory.html#HozoryTranslator.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.hozory.HozoryTranslator.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Translate a text using hozory engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – the text to translate.</p></li>
+<li><p><strong>target</strong> (<em>str</em><em>, </em><em>optional</em>) – The lang code of target lang. Defaults to “en”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine.identify_music">
+<span id="trengine-identify-music-module"></span><h2>trengine.identify_music module<a class="headerlink" href="#module-trengine.identify_music" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.identify_music.AsyncIdentifyMusic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.identify_music.</span></span><span class="sig-name descname"><span class="pre">AsyncIdentifyMusic</span></span><a class="reference internal" href="_modules/trengine/identify_music.html#AsyncIdentifyMusic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.identify_music.AsyncIdentifyMusic" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.identify_music.AsyncIdentifyMusic.identify">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.IdentifyMusicResult" title="trengine.types.IdentifyMusicResult"><span class="pre">IdentifyMusicResult</span></a></span></span><a class="reference internal" href="_modules/trengine/identify_music.html#AsyncIdentifyMusic.identify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.identify_music.AsyncIdentifyMusic.identify" title="Link to this definition">¶</a></dt>
+<dd><p>Identify music using shazam.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The path to the audio file to be identified. This should be a valid path to an audio file</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.identify_music.IdentifyMusic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.identify_music.</span></span><span class="sig-name descname"><span class="pre">IdentifyMusic</span></span><a class="reference internal" href="_modules/trengine/identify_music.html#IdentifyMusic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.identify_music.IdentifyMusic" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.identify_music.IdentifyMusic.identify">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.IdentifyMusicResult" title="trengine.types.IdentifyMusicResult"><span class="pre">IdentifyMusicResult</span></a></span></span><a class="reference internal" href="_modules/trengine/identify_music.html#IdentifyMusic.identify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.identify_music.IdentifyMusic.identify" title="Link to this definition">¶</a></dt>
+<dd><p>Identify music using shazam.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The path to the audio file to be identified. This should be a valid path to an audio file</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine.ocr">
+<span id="trengine-ocr-module"></span><h2>trengine.ocr module<a class="headerlink" href="#module-trengine.ocr" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.ocr.AsyncOCR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.ocr.</span></span><span class="sig-name descname"><span class="pre">AsyncOCR</span></span><a class="reference internal" href="_modules/trengine/ocr.html#AsyncOCR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.ocr.AsyncOCR" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.ocr.AsyncOCR.from_image">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'eng'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/trengine/ocr.html#AsyncOCR.from_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.ocr.AsyncOCR.from_image" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.ocr.OCR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.ocr.</span></span><span class="sig-name descname"><span class="pre">OCR</span></span><a class="reference internal" href="_modules/trengine/ocr.html#OCR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.ocr.OCR" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.ocr.OCR.from_image">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'eng'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/trengine/ocr.html#OCR.from_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.ocr.OCR.from_image" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine.speech_to_text">
+<span id="trengine-speech-to-text-module"></span><h2>trengine.speech_to_text module<a class="headerlink" href="#module-trengine.speech_to_text" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.speech_to_text.AsyncSpeechToText">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.speech_to_text.</span></span><span class="sig-name descname"><span class="pre">AsyncSpeechToText</span></span><a class="reference internal" href="_modules/trengine/speech_to_text.html#AsyncSpeechToText"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.speech_to_text.AsyncSpeechToText" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.speech_to_text.AsyncSpeechToText.to_text">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.SpeechToTextResult" title="trengine.types.SpeechToTextResult"><span class="pre">SpeechToTextResult</span></a></span></span><a class="reference internal" href="_modules/trengine/speech_to_text.html#AsyncSpeechToText.to_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.speech_to_text.AsyncSpeechToText.to_text" title="Link to this definition">¶</a></dt>
+<dd><p>Speech to text using google cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – The path to the audio file to be transcribed into text. This should be a valid path to an audio file</p></li>
+<li><p><strong>language</strong> (<em>str</em><em>, </em><em>optional</em>) – the source language code of the audio file. Defaults to “en”. Supported languages are: en, ar</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.speech_to_text.SpeechToText">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.speech_to_text.</span></span><span class="sig-name descname"><span class="pre">SpeechToText</span></span><a class="reference internal" href="_modules/trengine/speech_to_text.html#SpeechToText"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.speech_to_text.SpeechToText" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.speech_to_text.SpeechToText.to_text">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.SpeechToTextResult" title="trengine.types.SpeechToTextResult"><span class="pre">SpeechToTextResult</span></a></span></span><a class="reference internal" href="_modules/trengine/speech_to_text.html#SpeechToText.to_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.speech_to_text.SpeechToText.to_text" title="Link to this definition">¶</a></dt>
+<dd><p>Speech to text using google cloud.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – The path to the audio file to be transcribed into text. This should be a valid path to an audio file</p></li>
+<li><p><strong>language</strong> (<em>str</em><em>, </em><em>optional</em>) – the source language code of the audio file. Defaults to “en”. Supported languages are: en, ar</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine.tdict">
+<span id="trengine-tdict-module"></span><h2>trengine.tdict module<a class="headerlink" href="#module-trengine.tdict" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.tdict.AsyncTdictTranslator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.tdict.</span></span><span class="sig-name descname"><span class="pre">AsyncTdictTranslator</span></span><a class="reference internal" href="_modules/trengine/tdict.html#AsyncTdictTranslator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tdict.AsyncTdictTranslator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.tdict.AsyncTdictTranslator.translate">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/trengine/tdict.html#AsyncTdictTranslator.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tdict.AsyncTdictTranslator.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Translate a text using tdict engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – the text to translate.</p></li>
+<li><p><strong>to_language</strong> (<em>str</em><em>, </em><em>optional</em>) – The lang code of target lang. Defaults to “en”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.tdict.TdictTranslator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.tdict.</span></span><span class="sig-name descname"><span class="pre">TdictTranslator</span></span><a class="reference internal" href="_modules/trengine/tdict.html#TdictTranslator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tdict.TdictTranslator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.tdict.TdictTranslator.translate">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/trengine/tdict.html#TdictTranslator.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tdict.TdictTranslator.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Translate a text using tdict engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – the text to translate.</p></li>
+<li><p><strong>to_language</strong> (<em>str</em><em>, </em><em>optional</em>) – The lang code of target lang. Defaults to “en”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine.text_to_speech">
+<span id="trengine-text-to-speech-module"></span><h2>trengine.text_to_speech module<a class="headerlink" href="#module-trengine.text_to_speech" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.text_to_speech.AsyncTextToSpeech">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.text_to_speech.</span></span><span class="sig-name descname"><span class="pre">AsyncTextToSpeech</span></span><a class="reference internal" href="_modules/trengine/text_to_speech.html#AsyncTextToSpeech"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.text_to_speech.AsyncTextToSpeech" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.text_to_speech.AsyncTextToSpeech.to_speech">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_speech</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.TextToSpeechResult" title="trengine.types.TextToSpeechResult"><span class="pre">TextToSpeechResult</span></a></span></span><a class="reference internal" href="_modules/trengine/text_to_speech.html#AsyncTextToSpeech.to_speech"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.text_to_speech.AsyncTextToSpeech.to_speech" title="Link to this definition">¶</a></dt>
+<dd><p>Text to speech using google translate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – The text to be converted into speech</p></li>
+<li><p><strong>language</strong> (<em>str</em><em>, </em><em>optional</em>) – the source language code of the text. Defaults to “en”.</p></li>
+<li><p><strong>out_put_path</strong> (<em>str</em>) – The path to save the output audio file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.text_to_speech.TextToSpeech">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.text_to_speech.</span></span><span class="sig-name descname"><span class="pre">TextToSpeech</span></span><a class="reference internal" href="_modules/trengine/text_to_speech.html#TextToSpeech"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.text_to_speech.TextToSpeech" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.text_to_speech.TextToSpeech.to_speech">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_speech</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.TextToSpeechResult" title="trengine.types.TextToSpeechResult"><span class="pre">TextToSpeechResult</span></a></span></span><a class="reference internal" href="_modules/trengine/text_to_speech.html#TextToSpeech.to_speech"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.text_to_speech.TextToSpeech.to_speech" title="Link to this definition">¶</a></dt>
+<dd><p>Text to speech using google translate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – The text to be converted into speech</p></li>
+<li><p><strong>language</strong> (<em>str</em><em>, </em><em>optional</em>) – the source language code of the text. Defaults to “en”.</p></li>
+<li><p><strong>out_put_path</strong> (<em>str</em>) – The path to save the output audio file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine.tr">
+<span id="trengine-tr-module"></span><h2>trengine.tr module<a class="headerlink" href="#module-trengine.tr" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.tr.AsyncTranslator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.tr.</span></span><span class="sig-name descname"><span class="pre">AsyncTranslator</span></span><a class="reference internal" href="_modules/trengine/tr.html#AsyncTranslator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tr.AsyncTranslator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.tr.AsyncTranslator.detect">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/trengine/tr.html#AsyncTranslator.detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tr.AsyncTranslator.detect" title="Link to this definition">¶</a></dt>
+<dd><p>Detect language code from text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – The text.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.tr.AsyncTranslator.translate">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translated_lang</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_lang</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.AjaxTranslateResult" title="trengine.types.AjaxTranslateResult"><span class="pre">AjaxTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/tr.html#AsyncTranslator.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tr.AsyncTranslator.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Translate a text using tr engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – the text to translate.</p></li>
+<li><p><strong>translated_lang</strong> (<em>str</em><em>, </em><em>optional</em>) – The lang code of target lang. Defaults to “en”.</p></li>
+<li><p><strong>source_lang</strong> (<em>str</em><em>, </em><em>optional</em>) – Source lang of the text. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.tr.Translator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.tr.</span></span><span class="sig-name descname"><span class="pre">Translator</span></span><a class="reference internal" href="_modules/trengine/tr.html#Translator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tr.Translator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.tr.Translator.detect">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/trengine/tr.html#Translator.detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tr.Translator.detect" title="Link to this definition">¶</a></dt>
+<dd><p>Detect language code from text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – The text.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.tr.Translator.translate">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translated_lang</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_lang</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.AjaxTranslateResult" title="trengine.types.AjaxTranslateResult"><span class="pre">AjaxTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/tr.html#Translator.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.tr.Translator.translate" title="Link to this definition">¶</a></dt>
+<dd><p>Translate a text using tr engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – the text to translate.</p></li>
+<li><p><strong>translated_lang</strong> (<em>str</em><em>, </em><em>optional</em>) – The lang code of target lang. Defaults to “en”.</p></li>
+<li><p><strong>source_lang</strong> (<em>str</em><em>, </em><em>optional</em>) – Source lang of the text. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine.types">
+<span id="trengine-types-module"></span><h2>trengine.types module<a class="headerlink" href="#module-trengine.types" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.types.AjaxTranslateResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.types.</span></span><span class="sig-name descname"><span class="pre">AjaxTranslateResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translated_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/trengine/types.html#AjaxTranslateResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.AjaxTranslateResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trengine.types.Base" title="trengine.types.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.AjaxTranslateResult.original_language">
+<span class="sig-name descname"><span class="pre">original_language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.AjaxTranslateResult.original_language" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.AjaxTranslateResult.original_text">
+<span class="sig-name descname"><span class="pre">original_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.AjaxTranslateResult.original_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.types.AjaxTranslateResult.parse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">org</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.AjaxTranslateResult" title="trengine.types.AjaxTranslateResult"><span class="pre">AjaxTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/types.html#AjaxTranslateResult.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.AjaxTranslateResult.parse" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.AjaxTranslateResult.translated_text">
+<span class="sig-name descname"><span class="pre">translated_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.AjaxTranslateResult.translated_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.AjaxTranslateResult.translation_language">
+<span class="sig-name descname"><span class="pre">translation_language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.AjaxTranslateResult.translation_language" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.types.Base">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.types.</span></span><span class="sig-name descname"><span class="pre">Base</span></span><a class="reference internal" href="_modules/trengine/types.html#Base"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.Base" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.types.Base.default">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#trengine.types.Base" title="trengine.types.Base"><span class="pre">Base</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/trengine/types.html#Base.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.Base.default" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.types.GoogleTranslateResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.types.</span></span><span class="sig-name descname"><span class="pre">GoogleTranslateResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">translated_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/trengine/types.html#GoogleTranslateResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.GoogleTranslateResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trengine.types.Base" title="trengine.types.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.GoogleTranslateResult.dest_language">
+<span class="sig-name descname"><span class="pre">dest_language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.GoogleTranslateResult.dest_language" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.GoogleTranslateResult.original_language">
+<span class="sig-name descname"><span class="pre">original_language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.GoogleTranslateResult.original_language" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.types.GoogleTranslateResult.parse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.GoogleTranslateResult" title="trengine.types.GoogleTranslateResult"><span class="pre">GoogleTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/types.html#GoogleTranslateResult.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.GoogleTranslateResult.parse" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.GoogleTranslateResult.translated_text">
+<span class="sig-name descname"><span class="pre">translated_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.GoogleTranslateResult.translated_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.types.HozoryTranslateResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.types.</span></span><span class="sig-name descname"><span class="pre">HozoryTranslateResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">translated_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation_language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voice_link</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/trengine/types.html#HozoryTranslateResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.HozoryTranslateResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trengine.types.Base" title="trengine.types.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.types.HozoryTranslateResult.parse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.HozoryTranslateResult" title="trengine.types.HozoryTranslateResult"><span class="pre">HozoryTranslateResult</span></a></span></span><a class="reference internal" href="_modules/trengine/types.html#HozoryTranslateResult.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.HozoryTranslateResult.parse" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.HozoryTranslateResult.translated_text">
+<span class="sig-name descname"><span class="pre">translated_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.HozoryTranslateResult.translated_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.HozoryTranslateResult.translation_language">
+<span class="sig-name descname"><span class="pre">translation_language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.HozoryTranslateResult.translation_language" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.HozoryTranslateResult.voice_link">
+<span class="sig-name descname"><span class="pre">voice_link</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.HozoryTranslateResult.voice_link" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.types.IdentifyMusicResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.types.</span></span><span class="sig-name descname"><span class="pre">IdentifyMusicResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/trengine/types.html#IdentifyMusicResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.IdentifyMusicResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trengine.types.Base" title="trengine.types.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.IdentifyMusicResult.file_path">
+<span class="sig-name descname"><span class="pre">file_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.IdentifyMusicResult.file_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.types.IdentifyMusicResult.parse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.IdentifyMusicResult" title="trengine.types.IdentifyMusicResult"><span class="pre">IdentifyMusicResult</span></a></span></span><a class="reference internal" href="_modules/trengine/types.html#IdentifyMusicResult.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.IdentifyMusicResult.parse" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.IdentifyMusicResult.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#trengine.types.IdentifyMusicResult.status" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.IdentifyMusicResult.tracks">
+<span class="sig-name descname"><span class="pre">tracks</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span></em><a class="headerlink" href="#trengine.types.IdentifyMusicResult.tracks" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.types.SpeechToTextResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.types.</span></span><span class="sig-name descname"><span class="pre">SpeechToTextResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speech_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/trengine/types.html#SpeechToTextResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.SpeechToTextResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trengine.types.Base" title="trengine.types.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.SpeechToTextResult.file_path">
+<span class="sig-name descname"><span class="pre">file_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.SpeechToTextResult.file_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.SpeechToTextResult.language">
+<span class="sig-name descname"><span class="pre">language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.SpeechToTextResult.language" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.types.SpeechToTextResult.parse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.SpeechToTextResult" title="trengine.types.SpeechToTextResult"><span class="pre">SpeechToTextResult</span></a></span></span><a class="reference internal" href="_modules/trengine/types.html#SpeechToTextResult.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.SpeechToTextResult.parse" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.SpeechToTextResult.speech_text">
+<span class="sig-name descname"><span class="pre">speech_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.SpeechToTextResult.speech_text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.SpeechToTextResult.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#trengine.types.SpeechToTextResult.status" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.types.TextToSpeechResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.types.</span></span><span class="sig-name descname"><span class="pre">TextToSpeechResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/trengine/types.html#TextToSpeechResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.TextToSpeechResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#trengine.types.Base" title="trengine.types.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.TextToSpeechResult.language">
+<span class="sig-name descname"><span class="pre">language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.TextToSpeechResult.language" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.TextToSpeechResult.output_path">
+<span class="sig-name descname"><span class="pre">output_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.TextToSpeechResult.output_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="trengine.types.TextToSpeechResult.parse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#trengine.types.TextToSpeechResult" title="trengine.types.TextToSpeechResult"><span class="pre">TextToSpeechResult</span></a></span></span><a class="reference internal" href="_modules/trengine/types.html#TextToSpeechResult.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.types.TextToSpeechResult.parse" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.TextToSpeechResult.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#trengine.types.TextToSpeechResult.status" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="trengine.types.TextToSpeechResult.text">
+<span class="sig-name descname"><span class="pre">text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#trengine.types.TextToSpeechResult.text" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-trengine">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trengine" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.AsyncEngine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.</span></span><span class="sig-name descname"><span class="pre">AsyncEngine</span></span><a class="reference internal" href="_modules/trengine.html#AsyncEngine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.AsyncEngine" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.AsyncEngine.google">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">google</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.google.AsyncGoogleTranslator" title="trengine.google.AsyncGoogleTranslator"><span class="pre">AsyncGoogleTranslator</span></a></em><a class="headerlink" href="#trengine.AsyncEngine.google" title="Link to this definition">¶</a></dt>
+<dd><p>Use google engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Google Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.google.AsyncGoogleTranslator" title="trengine.google.AsyncGoogleTranslator">google.AsyncGoogleTranslator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.AsyncEngine.hozory">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hozory</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.hozory.AsyncHozoryTranslator" title="trengine.hozory.AsyncHozoryTranslator"><span class="pre">AsyncHozoryTranslator</span></a></em><a class="headerlink" href="#trengine.AsyncEngine.hozory" title="Link to this definition">¶</a></dt>
+<dd><p>Use hozory engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hozory Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.hozory.AsyncHozoryTranslator" title="trengine.hozory.AsyncHozoryTranslator">hozory.AsyncHozoryTranslator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.AsyncEngine.identify_music">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identify_music</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.identify_music.AsyncIdentifyMusic" title="trengine.identify_music.AsyncIdentifyMusic"><span class="pre">AsyncIdentifyMusic</span></a></em><a class="headerlink" href="#trengine.AsyncEngine.identify_music" title="Link to this definition">¶</a></dt>
+<dd><p>Use identify_music service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>identify_music Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.identify_music.AsyncIdentifyMusic" title="trengine.identify_music.AsyncIdentifyMusic">identify_music.AsyncIdentifyMusic</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.AsyncEngine.ocr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ocr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.ocr.AsyncOCR" title="trengine.ocr.AsyncOCR"><span class="pre">AsyncOCR</span></a></em><a class="headerlink" href="#trengine.AsyncEngine.ocr" title="Link to this definition">¶</a></dt>
+<dd><p>Use OCR service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ocr Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.ocr.AsyncOCR" title="trengine.ocr.AsyncOCR">ocr.AsyncOCR</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.AsyncEngine.speech_to_text">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">speech_to_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.speech_to_text.AsyncSpeechToText" title="trengine.speech_to_text.AsyncSpeechToText"><span class="pre">AsyncSpeechToText</span></a></em><a class="headerlink" href="#trengine.AsyncEngine.speech_to_text" title="Link to this definition">¶</a></dt>
+<dd><p>Use speech_to_text service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>speech_to_text Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.speech_to_text.AsyncSpeechToText" title="trengine.speech_to_text.AsyncSpeechToText">speech_to_text.AsyncSpeechToText</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.AsyncEngine.tdict">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tdict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.tdict.AsyncTdictTranslator" title="trengine.tdict.AsyncTdictTranslator"><span class="pre">AsyncTdictTranslator</span></a></em><a class="headerlink" href="#trengine.AsyncEngine.tdict" title="Link to this definition">¶</a></dt>
+<dd><p>Use tdict engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tdict Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.tdict.AsyncTdictTranslator" title="trengine.tdict.AsyncTdictTranslator">tdict.AsyncTdictTranslator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.AsyncEngine.text_to_speech">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">text_to_speech</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.text_to_speech.AsyncTextToSpeech" title="trengine.text_to_speech.AsyncTextToSpeech"><span class="pre">AsyncTextToSpeech</span></a></em><a class="headerlink" href="#trengine.AsyncEngine.text_to_speech" title="Link to this definition">¶</a></dt>
+<dd><p>Use text_to_speech service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>text_to_speech Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.text_to_speech.AsyncTextToSpeech" title="trengine.text_to_speech.AsyncTextToSpeech">text_to_speech.AsyncTextToSpeech</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.AsyncEngine.tr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.tr.AsyncTranslator" title="trengine.tr.AsyncTranslator"><span class="pre">AsyncTranslator</span></a></em><a class="headerlink" href="#trengine.AsyncEngine.tr" title="Link to this definition">¶</a></dt>
+<dd><p>Use tr engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ajax Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ajax.AsyncAjaxTranslator</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="trengine.Engine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">trengine.</span></span><span class="sig-name descname"><span class="pre">Engine</span></span><a class="reference internal" href="_modules/trengine.html#Engine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#trengine.Engine" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.Engine.google">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">google</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.google.GoogleTranslator" title="trengine.google.GoogleTranslator"><span class="pre">GoogleTranslator</span></a></em><a class="headerlink" href="#trengine.Engine.google" title="Link to this definition">¶</a></dt>
+<dd><p>Use google engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Google Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.google.GoogleTranslator" title="trengine.google.GoogleTranslator">google.GoogleTranslator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.Engine.hozory">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hozory</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.hozory.HozoryTranslator" title="trengine.hozory.HozoryTranslator"><span class="pre">HozoryTranslator</span></a></em><a class="headerlink" href="#trengine.Engine.hozory" title="Link to this definition">¶</a></dt>
+<dd><p>Use hozory engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hozory Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.hozory.HozoryTranslator" title="trengine.hozory.HozoryTranslator">hozory.HozoryTranslator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.Engine.identify_music">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identify_music</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.identify_music.IdentifyMusic" title="trengine.identify_music.IdentifyMusic"><span class="pre">IdentifyMusic</span></a></em><a class="headerlink" href="#trengine.Engine.identify_music" title="Link to this definition">¶</a></dt>
+<dd><p>Use identify_music service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>identify_music Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.identify_music.IdentifyMusic" title="trengine.identify_music.IdentifyMusic">identify_music.IdentifyMusic</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.Engine.ocr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ocr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.ocr.OCR" title="trengine.ocr.OCR"><span class="pre">OCR</span></a></em><a class="headerlink" href="#trengine.Engine.ocr" title="Link to this definition">¶</a></dt>
+<dd><p>Use OCR service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ocr Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.ocr.OCR" title="trengine.ocr.OCR">ocr.OCR</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.Engine.speech_to_text">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">speech_to_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.speech_to_text.SpeechToText" title="trengine.speech_to_text.SpeechToText"><span class="pre">SpeechToText</span></a></em><a class="headerlink" href="#trengine.Engine.speech_to_text" title="Link to this definition">¶</a></dt>
+<dd><p>Use speech_to_text service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>speech_to_text Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.speech_to_text.SpeechToText" title="trengine.speech_to_text.SpeechToText">speech_to_text.SpeechToText</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.Engine.tdict">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tdict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.tdict.TdictTranslator" title="trengine.tdict.TdictTranslator"><span class="pre">TdictTranslator</span></a></em><a class="headerlink" href="#trengine.Engine.tdict" title="Link to this definition">¶</a></dt>
+<dd><p>Use tdict engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tdict Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.tdict.TdictTranslator" title="trengine.tdict.TdictTranslator">tdict.TdictTranslator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.Engine.text_to_speech">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">text_to_speech</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.text_to_speech.TextToSpeech" title="trengine.text_to_speech.TextToSpeech"><span class="pre">TextToSpeech</span></a></em><a class="headerlink" href="#trengine.Engine.text_to_speech" title="Link to this definition">¶</a></dt>
+<dd><p>Use text_to_speech service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>text_to_speech Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#trengine.text_to_speech.TextToSpeech" title="trengine.text_to_speech.TextToSpeech">text_to_speech.TextToSpeech</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="trengine.Engine.tr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#trengine.tr.Translator" title="trengine.tr.Translator"><span class="pre">Translator</span></a></em><a class="headerlink" href="#trengine.Engine.tr" title="Link to this definition">¶</a></dt>
+<dd><p>Use tr engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ajax Engine Class.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ajax.AjaxTranslator</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Zaid
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">trengine package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-trengine.exceptions">trengine.exceptions module</a><ul>
+<li><a class="reference internal" href="#trengine.exceptions.ApiException"><code class="docutils literal notranslate"><span class="pre">ApiException</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.google">trengine.google module</a><ul>
+<li><a class="reference internal" href="#trengine.google.AsyncGoogleTranslator"><code class="docutils literal notranslate"><span class="pre">AsyncGoogleTranslator</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.google.AsyncGoogleTranslator.translate"><code class="docutils literal notranslate"><span class="pre">AsyncGoogleTranslator.translate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.google.GoogleTranslator"><code class="docutils literal notranslate"><span class="pre">GoogleTranslator</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.google.GoogleTranslator.translate"><code class="docutils literal notranslate"><span class="pre">GoogleTranslator.translate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.hozory">trengine.hozory module</a><ul>
+<li><a class="reference internal" href="#trengine.hozory.AsyncHozoryTranslator"><code class="docutils literal notranslate"><span class="pre">AsyncHozoryTranslator</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.hozory.AsyncHozoryTranslator.translate"><code class="docutils literal notranslate"><span class="pre">AsyncHozoryTranslator.translate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.hozory.HozoryTranslator"><code class="docutils literal notranslate"><span class="pre">HozoryTranslator</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.hozory.HozoryTranslator.translate"><code class="docutils literal notranslate"><span class="pre">HozoryTranslator.translate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.identify_music">trengine.identify_music module</a><ul>
+<li><a class="reference internal" href="#trengine.identify_music.AsyncIdentifyMusic"><code class="docutils literal notranslate"><span class="pre">AsyncIdentifyMusic</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.identify_music.AsyncIdentifyMusic.identify"><code class="docutils literal notranslate"><span class="pre">AsyncIdentifyMusic.identify()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.identify_music.IdentifyMusic"><code class="docutils literal notranslate"><span class="pre">IdentifyMusic</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.identify_music.IdentifyMusic.identify"><code class="docutils literal notranslate"><span class="pre">IdentifyMusic.identify()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.ocr">trengine.ocr module</a><ul>
+<li><a class="reference internal" href="#trengine.ocr.AsyncOCR"><code class="docutils literal notranslate"><span class="pre">AsyncOCR</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.ocr.AsyncOCR.from_image"><code class="docutils literal notranslate"><span class="pre">AsyncOCR.from_image()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.ocr.OCR"><code class="docutils literal notranslate"><span class="pre">OCR</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.ocr.OCR.from_image"><code class="docutils literal notranslate"><span class="pre">OCR.from_image()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.speech_to_text">trengine.speech_to_text module</a><ul>
+<li><a class="reference internal" href="#trengine.speech_to_text.AsyncSpeechToText"><code class="docutils literal notranslate"><span class="pre">AsyncSpeechToText</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.speech_to_text.AsyncSpeechToText.to_text"><code class="docutils literal notranslate"><span class="pre">AsyncSpeechToText.to_text()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.speech_to_text.SpeechToText"><code class="docutils literal notranslate"><span class="pre">SpeechToText</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.speech_to_text.SpeechToText.to_text"><code class="docutils literal notranslate"><span class="pre">SpeechToText.to_text()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.tdict">trengine.tdict module</a><ul>
+<li><a class="reference internal" href="#trengine.tdict.AsyncTdictTranslator"><code class="docutils literal notranslate"><span class="pre">AsyncTdictTranslator</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.tdict.AsyncTdictTranslator.translate"><code class="docutils literal notranslate"><span class="pre">AsyncTdictTranslator.translate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.tdict.TdictTranslator"><code class="docutils literal notranslate"><span class="pre">TdictTranslator</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.tdict.TdictTranslator.translate"><code class="docutils literal notranslate"><span class="pre">TdictTranslator.translate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.text_to_speech">trengine.text_to_speech module</a><ul>
+<li><a class="reference internal" href="#trengine.text_to_speech.AsyncTextToSpeech"><code class="docutils literal notranslate"><span class="pre">AsyncTextToSpeech</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.text_to_speech.AsyncTextToSpeech.to_speech"><code class="docutils literal notranslate"><span class="pre">AsyncTextToSpeech.to_speech()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.text_to_speech.TextToSpeech"><code class="docutils literal notranslate"><span class="pre">TextToSpeech</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.text_to_speech.TextToSpeech.to_speech"><code class="docutils literal notranslate"><span class="pre">TextToSpeech.to_speech()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.tr">trengine.tr module</a><ul>
+<li><a class="reference internal" href="#trengine.tr.AsyncTranslator"><code class="docutils literal notranslate"><span class="pre">AsyncTranslator</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.tr.AsyncTranslator.detect"><code class="docutils literal notranslate"><span class="pre">AsyncTranslator.detect()</span></code></a></li>
+<li><a class="reference internal" href="#trengine.tr.AsyncTranslator.translate"><code class="docutils literal notranslate"><span class="pre">AsyncTranslator.translate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.tr.Translator"><code class="docutils literal notranslate"><span class="pre">Translator</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.tr.Translator.detect"><code class="docutils literal notranslate"><span class="pre">Translator.detect()</span></code></a></li>
+<li><a class="reference internal" href="#trengine.tr.Translator.translate"><code class="docutils literal notranslate"><span class="pre">Translator.translate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine.types">trengine.types module</a><ul>
+<li><a class="reference internal" href="#trengine.types.AjaxTranslateResult"><code class="docutils literal notranslate"><span class="pre">AjaxTranslateResult</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.types.AjaxTranslateResult.original_language"><code class="docutils literal notranslate"><span class="pre">AjaxTranslateResult.original_language</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.AjaxTranslateResult.original_text"><code class="docutils literal notranslate"><span class="pre">AjaxTranslateResult.original_text</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.AjaxTranslateResult.parse"><code class="docutils literal notranslate"><span class="pre">AjaxTranslateResult.parse()</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.AjaxTranslateResult.translated_text"><code class="docutils literal notranslate"><span class="pre">AjaxTranslateResult.translated_text</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.AjaxTranslateResult.translation_language"><code class="docutils literal notranslate"><span class="pre">AjaxTranslateResult.translation_language</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.types.Base"><code class="docutils literal notranslate"><span class="pre">Base</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.types.Base.default"><code class="docutils literal notranslate"><span class="pre">Base.default()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.types.GoogleTranslateResult"><code class="docutils literal notranslate"><span class="pre">GoogleTranslateResult</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.types.GoogleTranslateResult.dest_language"><code class="docutils literal notranslate"><span class="pre">GoogleTranslateResult.dest_language</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.GoogleTranslateResult.original_language"><code class="docutils literal notranslate"><span class="pre">GoogleTranslateResult.original_language</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.GoogleTranslateResult.parse"><code class="docutils literal notranslate"><span class="pre">GoogleTranslateResult.parse()</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.GoogleTranslateResult.translated_text"><code class="docutils literal notranslate"><span class="pre">GoogleTranslateResult.translated_text</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.types.HozoryTranslateResult"><code class="docutils literal notranslate"><span class="pre">HozoryTranslateResult</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.types.HozoryTranslateResult.parse"><code class="docutils literal notranslate"><span class="pre">HozoryTranslateResult.parse()</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.HozoryTranslateResult.translated_text"><code class="docutils literal notranslate"><span class="pre">HozoryTranslateResult.translated_text</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.HozoryTranslateResult.translation_language"><code class="docutils literal notranslate"><span class="pre">HozoryTranslateResult.translation_language</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.HozoryTranslateResult.voice_link"><code class="docutils literal notranslate"><span class="pre">HozoryTranslateResult.voice_link</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.types.IdentifyMusicResult"><code class="docutils literal notranslate"><span class="pre">IdentifyMusicResult</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.types.IdentifyMusicResult.file_path"><code class="docutils literal notranslate"><span class="pre">IdentifyMusicResult.file_path</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.IdentifyMusicResult.parse"><code class="docutils literal notranslate"><span class="pre">IdentifyMusicResult.parse()</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.IdentifyMusicResult.status"><code class="docutils literal notranslate"><span class="pre">IdentifyMusicResult.status</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.IdentifyMusicResult.tracks"><code class="docutils literal notranslate"><span class="pre">IdentifyMusicResult.tracks</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.types.SpeechToTextResult"><code class="docutils literal notranslate"><span class="pre">SpeechToTextResult</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.types.SpeechToTextResult.file_path"><code class="docutils literal notranslate"><span class="pre">SpeechToTextResult.file_path</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.SpeechToTextResult.language"><code class="docutils literal notranslate"><span class="pre">SpeechToTextResult.language</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.SpeechToTextResult.parse"><code class="docutils literal notranslate"><span class="pre">SpeechToTextResult.parse()</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.SpeechToTextResult.speech_text"><code class="docutils literal notranslate"><span class="pre">SpeechToTextResult.speech_text</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.SpeechToTextResult.status"><code class="docutils literal notranslate"><span class="pre">SpeechToTextResult.status</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.types.TextToSpeechResult"><code class="docutils literal notranslate"><span class="pre">TextToSpeechResult</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.types.TextToSpeechResult.language"><code class="docutils literal notranslate"><span class="pre">TextToSpeechResult.language</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.TextToSpeechResult.output_path"><code class="docutils literal notranslate"><span class="pre">TextToSpeechResult.output_path</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.TextToSpeechResult.parse"><code class="docutils literal notranslate"><span class="pre">TextToSpeechResult.parse()</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.TextToSpeechResult.status"><code class="docutils literal notranslate"><span class="pre">TextToSpeechResult.status</span></code></a></li>
+<li><a class="reference internal" href="#trengine.types.TextToSpeechResult.text"><code class="docutils literal notranslate"><span class="pre">TextToSpeechResult.text</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-trengine">Module contents</a><ul>
+<li><a class="reference internal" href="#trengine.AsyncEngine"><code class="docutils literal notranslate"><span class="pre">AsyncEngine</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.AsyncEngine.google"><code class="docutils literal notranslate"><span class="pre">AsyncEngine.google</span></code></a></li>
+<li><a class="reference internal" href="#trengine.AsyncEngine.hozory"><code class="docutils literal notranslate"><span class="pre">AsyncEngine.hozory</span></code></a></li>
+<li><a class="reference internal" href="#trengine.AsyncEngine.identify_music"><code class="docutils literal notranslate"><span class="pre">AsyncEngine.identify_music</span></code></a></li>
+<li><a class="reference internal" href="#trengine.AsyncEngine.ocr"><code class="docutils literal notranslate"><span class="pre">AsyncEngine.ocr</span></code></a></li>
+<li><a class="reference internal" href="#trengine.AsyncEngine.speech_to_text"><code class="docutils literal notranslate"><span class="pre">AsyncEngine.speech_to_text</span></code></a></li>
+<li><a class="reference internal" href="#trengine.AsyncEngine.tdict"><code class="docutils literal notranslate"><span class="pre">AsyncEngine.tdict</span></code></a></li>
+<li><a class="reference internal" href="#trengine.AsyncEngine.text_to_speech"><code class="docutils literal notranslate"><span class="pre">AsyncEngine.text_to_speech</span></code></a></li>
+<li><a class="reference internal" href="#trengine.AsyncEngine.tr"><code class="docutils literal notranslate"><span class="pre">AsyncEngine.tr</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trengine.Engine"><code class="docutils literal notranslate"><span class="pre">Engine</span></code></a><ul>
+<li><a class="reference internal" href="#trengine.Engine.google"><code class="docutils literal notranslate"><span class="pre">Engine.google</span></code></a></li>
+<li><a class="reference internal" href="#trengine.Engine.hozory"><code class="docutils literal notranslate"><span class="pre">Engine.hozory</span></code></a></li>
+<li><a class="reference internal" href="#trengine.Engine.identify_music"><code class="docutils literal notranslate"><span class="pre">Engine.identify_music</span></code></a></li>
+<li><a class="reference internal" href="#trengine.Engine.ocr"><code class="docutils literal notranslate"><span class="pre">Engine.ocr</span></code></a></li>
+<li><a class="reference internal" href="#trengine.Engine.speech_to_text"><code class="docutils literal notranslate"><span class="pre">Engine.speech_to_text</span></code></a></li>
+<li><a class="reference internal" href="#trengine.Engine.tdict"><code class="docutils literal notranslate"><span class="pre">Engine.tdict</span></code></a></li>
+<li><a class="reference internal" href="#trengine.Engine.text_to_speech"><code class="docutils literal notranslate"><span class="pre">Engine.text_to_speech</span></code></a></li>
+<li><a class="reference internal" href="#trengine.Engine.tr"><code class="docutils literal notranslate"><span class="pre">Engine.tr</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    </body>
+</html>
